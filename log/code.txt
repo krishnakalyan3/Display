@@ -1,0 +1,85 @@
+ #### All data ex1
+
+    elif dataset_type == 'cifar':
+        size_images = 32
+        number_channel = 3
+        print('Original data set ' + dataset_type + ' is selected\n')
+        X_train, y_train, X_val, y_val, X_test_cln, y_test_cln, meanpixel = ldb.load_cifar_dataset(size_training=50000,
+                                                                                                   size_validation=0,
+                                                                                                   Normal_flag=None)
+        Xtrain_outdis, y_outi, Xtest_outdis, _ = ldb.load_cifar100_dataset(Normal_flag=None)
+
+        X_train -= meanpixel
+        X_test_cln -= meanpixel
+        Xtrain_outdis -= meanpixel
+        Xtest_outdis -= meanpixel
+
+        OUTDIST_CIFAR_100_TRAIN = 20000
+        OUTDIST_CIFAR_100_TEST = 10000
+
+        X_test_out = Xtest_outdis[:OUTDIST_CIFAR_100_TEST]
+        Ytest_outdis = 10 * np.ones(OUTDIST_CIFAR_100_TEST)
+
+        Training_input_outDis = Xtrain_outdis[:OUTDIST_CIFAR_100_TRAIN]
+        Ytrain_outdis = 10 * np.ones(OUTDIST_CIFAR_100_TRAIN)
+
+        # X_tr_indistribution = []
+        # y_tr_indistribution = []
+        #
+        # for i in range(10):
+        #     index = np.where(y_train == i)[0][:3000]
+        #     X_tr_indistribution.append(X_train[index])
+        #     y_tr_indistribution.append(y_train[index])
+        #
+        # X_tr_indistribution = np.asarray(np.vstack(X_tr_indistribution))
+        # y_tr_indistribution = np.asarray(np.hstack(y_tr_indistribution))
+
+        X_train = np.concatenate((X_train, Training_input_outDis), axis=0)
+        y_train = np.concatenate((y_train, Ytrain_outdis), axis=0)
+
+        X_test = np.concatenate((X_test_cln, X_test_out), axis=0)
+        y_test = np.concatenate((y_test_cln, Ytest_outdis))    
+
+##### All data exp 2
+
+    elif dataset_type =='cifar':
+        size_images = 32
+        number_channel = 3
+        print('Original data set '+dataset_type+' is selected\n')
+        X_train, y_train, X_val, y_val, X_test_cln, y_test_cln, meanpixel = ldb.load_cifar_dataset(size_training=50000, size_validation=0,
+                                                                                                   Normal_flag= None)
+        Xtrain_outdis, _, Xtest_outdis, _ = ldb.load_cifar100_dataset(Normal_flag=None)
+
+        Xtrain_outdis -= meanpixel
+        Xtest_outdis -= meanpixel
+
+        X_train -= meanpixel
+        X_test_cln -= meanpixel
+
+        OUTDIST_CIFAR_100_TRAIN = 20000
+        OUTDIST_CIFAR_100_TEST = 10000
+
+        OUTDIST_OBS_SP_TRAIN = 1000
+        OUTDIST_OBS_SP_TEST = 1000
+
+        X_train_noise = SKUtil.random_noise(X_train[:OUTDIST_OBS_SP_TRAIN], mode='s&p', amount=0.1, clip=True)
+        X_train_noise -= meanpixel
+        Ytrain_noise = 10 * np.ones(OUTDIST_OBS_SP_TRAIN)
+
+        X_test_noise = SKUtil.random_noise(X_test_cln[:OUTDIST_OBS_SP_TEST], mode='s&p', amount=0.1, clip=True)
+        X_test_noise -= meanpixel
+        Ytest_noise = 10 * np.ones(OUTDIST_OBS_SP_TEST)
+
+        # CIFAR 100
+        X_train_out = Xtrain_outdis[:OUTDIST_CIFAR_100_TRAIN]
+        Ytrain_outdis = 10 * np.ones(OUTDIST_CIFAR_100_TRAIN)
+
+        X_test_out = Xtest_outdis[-OUTDIST_CIFAR_100_TEST:]
+        Ytest_outdis = 10 * np.ones(OUTDIST_CIFAR_100_TEST)
+
+
+        X_train = np.concatenate((X_train, X_train_out, X_train_noise), axis=0)
+        y_train = np.concatenate((y_train, Ytrain_outdis, Ytrain_noise), axis=0)
+
+        X_test = np.concatenate((X_test_cln, X_test_out, X_test_noise), axis=0)
+        y_test = np.concatenate((y_test_cln, Ytest_outdis, Ytest_noise))

@@ -1,0 +1,32 @@
+# MNIST Code    
+    if dataset_type == 'mnist':
+        size_images = 28
+        number_channel = 1
+        X_train, y_train, X_val, y_val, X_test_cln, y_test_cln = ldb.load_MNIST_dataset()
+        Xtrain_outdis, Ytrain_outdis = ldb.load_NotMMNIST()
+
+        X_tr_indistribution = []
+        y_tr_indistribution = []
+
+        for i in range(10):
+            index = np.where(y_train == i)[0][:4000]
+            X_tr_indistribution.append(X_train[index])
+            y_tr_indistribution.append(y_train[index])
+
+        X_tr_indistribution = np.asarray(np.vstack(X_tr_indistribution))
+        y_tr_indistribution = np.asarray(np.hstack(y_tr_indistribution))
+
+        OUTDIST_MINST_100_TRAIN = 10000
+        OUTDIST_MINST_100_TEST = 10000
+
+        X_train_out = Xtrain_outdis[: OUTDIST_MINST_100_TRAIN]
+        y_train_out = 10*np.ones(X_train_out.shape[0])
+
+        X_test_out = Xtrain_outdis[OUTDIST_MINST_100_TEST:]
+        Ytest_outdis = 10 * np.ones(X_test_out.shape[0])
+
+        X_train = np.concatenate((X_tr_indistribution, X_train_out), axis=0)
+        y_train = np.concatenate((y_tr_indistribution, y_train_out), axis=0)
+
+        X_test = np.concatenate((X_test_cln, X_test_out), axis=0)
+        y_test = np.concatenate((y_test_cln, Ytest_outdis))

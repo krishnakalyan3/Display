@@ -1,0 +1,603 @@
+root@568e603f9ac7:/gel/usr/skkal1/newdir/new_code# THEANO_FLAGS='mode=FAST_RUN,device=gpu,floatX=float32,lib.cnmem=0.1' python2 Run_adv_NetTest.py -m generalist  -d  cifar -n 5 -e cuda_conv
+Using gpu device 0: Tesla K40c (CNMeM is enabled with initial size: 10.0% of memory, cuDNN 4008)
+/usr/local/lib/python2.7/dist-packages/theano/tensor/signal/downsample.py:6: UserWarning: downsample module has been moved to the theano.tensor.signal.pool module.
+  "downsample module has been moved to the theano.tensor.signal.pool module.")
+Choosen method is generalist
+dataset is cifar
+number of networks is 5
+NetName is cuda_conv
+Original data set cifar is selected
+
+numbers of training =	 [50500 ,50500]		 numbers of test data = 	30000
+
+5 Networks trained for 	 by cifar
+A net with three filters no FC layer defined in directroy Test_Train_v1
+
+(None, 3, 32, 32)
+(None, 32, 32, 32)
+(None, 32, 15, 15)
+(None, 32, 15, 15)
+(None, 32, 7, 7)
+(None, 64, 7, 7)
+(None, 64, 3, 3)
+(None, 10)
+A net with three filters no FC layer defined in directroy Test_Train_v1
+
+(None, 3, 32, 32)
+(None, 32, 32, 32)
+(None, 32, 15, 15)
+(None, 32, 15, 15)
+(None, 32, 7, 7)
+(None, 64, 7, 7)
+(None, 64, 3, 3)
+(None, 10)
+A net with three filters no FC layer defined in directroy Test_Train_v1
+
+(None, 3, 32, 32)
+(None, 32, 32, 32)
+(None, 32, 15, 15)
+(None, 32, 15, 15)
+(None, 32, 7, 7)
+(None, 64, 7, 7)
+(None, 64, 3, 3)
+(None, 10)
+A net with three filters no FC layer defined in directroy Test_Train_v1
+
+(None, 3, 32, 32)
+(None, 32, 32, 32)
+(None, 32, 15, 15)
+(None, 32, 15, 15)
+(None, 32, 7, 7)
+(None, 64, 7, 7)
+(None, 64, 3, 3)
+(None, 10)
+A net with three filters no FC layer defined in directroy Test_Train_v1
+
+(None, 3, 32, 32)
+(None, 32, 32, 32)
+(None, 32, 15, 15)
+(None, 32, 15, 15)
+(None, 32, 7, 7)
+(None, 64, 7, 7)
+(None, 64, 3, 3)
+(None, 10)
+Traceback (most recent call last):
+  File "Run_adv_NetTest.py", line 45, in <module>
+    main(argv=sys.argv[1:])
+  File "Run_adv_NetTest.py", line 43, in main
+    MiXing_Function_new.MIXING_Func(num_epochs=epochs,  num_networks=num_networks, dataset_type=dataset_type, Approach=approach, Arch=arch,phase=phase, net_name = net_name)
+  File "/gel/usr/skkal1/newdir/new_code/MiXing_Function_new.py", line 79, in MIXING_Func
+    MIXING_NET = CNN.exp3_cifar(input_var_mixNet,  num_input=num_networks*10)
+AttributeError: 'module' object has no attribute 'exp3_cifar'
+root@568e603f9ac7:/gel/usr/skkal1/newdir/new_code# THEANO_FLAGS='mode=FAST_RUN,device=gpu,floatX=float32,lib.cnmem=0.1' python2 Run_adv_NetTest.py -m generalist  -d  cifar -n 5 -e cuda_conv
+Using gpu device 0: Tesla K40c (CNMeM is enabled with initial size: 10.0% of memory, cuDNN 4008)
+/usr/local/lib/python2.7/dist-packages/theano/tensor/signal/downsample.py:6: UserWarning: downsample module has been moved to the theano.tensor.signal.pool module.
+  "downsample module has been moved to the theano.tensor.signal.pool module.")
+Choosen method is generalist
+dataset is cifar
+number of networks is 5
+NetName is cuda_conv
+Original data set cifar is selected
+
+numbers of training =	 [50500 ,50500]		 numbers of test data = 	30000
+
+5 Networks trained for 	 by cifar
+A net with three filters no FC layer defined in directroy Test_Train_v1
+
+(None, 3, 32, 32)
+(None, 32, 32, 32)
+(None, 32, 15, 15)
+(None, 32, 15, 15)
+(None, 32, 7, 7)
+(None, 64, 7, 7)
+(None, 64, 3, 3)
+(None, 10)
+A net with three filters no FC layer defined in directroy Test_Train_v1
+
+(None, 3, 32, 32)
+(None, 32, 32, 32)
+(None, 32, 15, 15)
+(None, 32, 15, 15)
+(None, 32, 7, 7)
+(None, 64, 7, 7)
+(None, 64, 3, 3)
+(None, 10)
+A net with three filters no FC layer defined in directroy Test_Train_v1
+
+(None, 3, 32, 32)
+(None, 32, 32, 32)
+(None, 32, 15, 15)
+(None, 32, 15, 15)
+(None, 32, 7, 7)
+(None, 64, 7, 7)
+(None, 64, 3, 3)
+(None, 10)
+A net with three filters no FC layer defined in directroy Test_Train_v1
+
+(None, 3, 32, 32)
+(None, 32, 32, 32)
+(None, 32, 15, 15)
+(None, 32, 15, 15)
+(None, 32, 7, 7)
+(None, 64, 7, 7)
+(None, 64, 3, 3)
+(None, 10)
+A net with three filters no FC layer defined in directroy Test_Train_v1
+
+(None, 3, 32, 32)
+(None, 32, 32, 32)
+(None, 32, 15, 15)
+(None, 32, 15, 15)
+(None, 32, 7, 7)
+(None, 64, 7, 7)
+(None, 64, 3, 3)
+(None, 10)
+/usr/local/lib/python2.7/dist-packages/lasagne/layers/conv.py:489: UserWarning: The `image_shape` keyword argument to `tensor.nnet.conv2d` is deprecated, it has been renamed to `input_shape`.
+  border_mode=border_mode)
+Gating function is trained for 50
+Training samples50500
+
+batchsize is not dividable by total samples
+===== epoch 0======
+
+Training Error rate % 19.96603
+
+batchsize is not dividable by total samples
+Test Error rate % 29.40492
+
+batchsize is not dividable by total samples
+===== epoch 1======
+
+Training Error rate % 18.84889
+
+batchsize is not dividable by total samples
+Test Error rate % 29.02704
+
+batchsize is not dividable by total samples
+===== epoch 2======
+
+Training Error rate % 18.44134
+
+batchsize is not dividable by total samples
+Test Error rate % 28.33887
+
+batchsize is not dividable by total samples
+===== epoch 3======
+
+Training Error rate % 18.20795
+
+batchsize is not dividable by total samples
+Test Error rate % 29.13785
+
+batchsize is not dividable by total samples
+===== epoch 4======
+
+Training Error rate % 18.08486
+
+batchsize is not dividable by total samples
+Test Error rate % 28.87079
+
+batchsize is not dividable by total samples
+===== epoch 5======
+
+Training Error rate % 18.00924
+
+batchsize is not dividable by total samples
+Test Error rate % 28.99379
+
+batchsize is not dividable by total samples
+===== epoch 6======
+
+Training Error rate % 17.81541
+
+batchsize is not dividable by total samples
+Test Error rate % 30.34020
+
+batchsize is not dividable by total samples
+===== epoch 7======
+
+Training Error rate % 17.63763
+
+batchsize is not dividable by total samples
+Test Error rate % 29.18661
+
+batchsize is not dividable by total samples
+===== epoch 8======
+
+Training Error rate % 17.66951
+
+batchsize is not dividable by total samples
+Test Error rate % 28.63808
+
+batchsize is not dividable by total samples
+===== epoch 9======
+
+Training Error rate % 17.56888
+
+batchsize is not dividable by total samples
+Test Error rate % 29.90802
+
+batchsize is not dividable by total samples
+===== epoch 10======
+
+Training Error rate % 17.41879
+
+batchsize is not dividable by total samples
+Test Error rate % 29.91024
+
+batchsize is not dividable by total samples
+===== epoch 11======
+
+Training Error rate % 17.35771
+
+batchsize is not dividable by total samples
+Test Error rate % 29.79167
+
+batchsize is not dividable by total samples
+===== epoch 12======
+
+Training Error rate % 17.55922
+
+batchsize is not dividable by total samples
+Test Error rate % 29.60550
+
+batchsize is not dividable by total samples
+===== epoch 13======
+
+Training Error rate % 17.24393
+
+batchsize is not dividable by total samples
+Test Error rate % 30.99512
+
+batchsize is not dividable by total samples
+===== epoch 14======
+
+Training Error rate % 17.29593
+
+batchsize is not dividable by total samples
+Test Error rate % 30.14184
+
+batchsize is not dividable by total samples
+===== epoch 15======
+
+Training Error rate % 17.38098
+
+batchsize is not dividable by total samples
+Test Error rate % 29.51684
+
+batchsize is not dividable by total samples
+===== epoch 16======
+
+Training Error rate % 17.31304
+
+batchsize is not dividable by total samples
+Test Error rate % 30.10306
+
+batchsize is not dividable by total samples
+===== epoch 17======
+
+Training Error rate % 17.31280
+
+batchsize is not dividable by total samples
+Test Error rate % 30.05098
+
+batchsize is not dividable by total samples
+===== epoch 18======
+
+Training Error rate % 17.35376
+
+batchsize is not dividable by total samples
+Test Error rate % 29.17775
+
+batchsize is not dividable by total samples
+===== epoch 19======
+
+Training Error rate % 17.26010
+
+batchsize is not dividable by total samples
+Test Error rate % 29.40049
+
+batchsize is not dividable by total samples
+===== epoch 20======
+
+Training Error rate % 17.16784
+
+batchsize is not dividable by total samples
+Test Error rate % 30.29588
+
+batchsize is not dividable by total samples
+===== epoch 21======
+
+Training Error rate % 17.27394
+
+batchsize is not dividable by total samples
+Test Error rate % 29.73072
+
+batchsize is not dividable by total samples
+===== epoch 22======
+
+Training Error rate % 17.15481
+
+batchsize is not dividable by total samples
+Test Error rate % 28.98493
+
+batchsize is not dividable by total samples
+===== epoch 23======
+
+Training Error rate % 17.18494
+
+batchsize is not dividable by total samples
+Test Error rate % 30.02549
+
+batchsize is not dividable by total samples
+===== epoch 24======
+
+Training Error rate % 17.08384
+
+batchsize is not dividable by total samples
+Test Error rate % 28.93063
+
+batchsize is not dividable by total samples
+===== epoch 25======
+
+Training Error rate % 17.12758
+
+batchsize is not dividable by total samples
+Test Error rate % 29.62877
+
+batchsize is not dividable by total samples
+===== epoch 26======
+
+Training Error rate % 17.13328
+
+batchsize is not dividable by total samples
+Test Error rate % 31.11813
+
+batchsize is not dividable by total samples
+===== epoch 27======
+
+Training Error rate % 16.86232
+
+batchsize is not dividable by total samples
+Test Error rate % 30.60616
+
+batchsize is not dividable by total samples
+===== epoch 28======
+
+Training Error rate % 17.07942
+
+batchsize is not dividable by total samples
+Test Error rate % 29.66312
+
+batchsize is not dividable by total samples
+===== epoch 29======
+
+Training Error rate % 17.12142
+
+batchsize is not dividable by total samples
+Test Error rate % 29.63209
+
+batchsize is not dividable by total samples
+===== epoch 30======
+
+Training Error rate % 17.11862
+
+batchsize is not dividable by total samples
+Test Error rate % 28.77770
+
+batchsize is not dividable by total samples
+===== epoch 31======
+
+Training Error rate % 16.95807
+
+batchsize is not dividable by total samples
+Test Error rate % 29.38941
+
+batchsize is not dividable by total samples
+===== epoch 32======
+
+Training Error rate % 17.15993
+
+batchsize is not dividable by total samples
+Test Error rate % 30.06095
+
+batchsize is not dividable by total samples
+===== epoch 33======
+
+Training Error rate % 17.13468
+
+batchsize is not dividable by total samples
+Test Error rate % 29.99113
+
+batchsize is not dividable by total samples
+===== epoch 34======
+
+Training Error rate % 17.03486
+
+batchsize is not dividable by total samples
+Test Error rate % 29.91356
+
+batchsize is not dividable by total samples
+===== epoch 35======
+
+Training Error rate % 17.16516
+
+batchsize is not dividable by total samples
+Test Error rate % 30.53191
+
+batchsize is not dividable by total samples
+===== epoch 36======
+
+Training Error rate % 17.00670
+
+batchsize is not dividable by total samples
+Test Error rate % 30.05762
+
+batchsize is not dividable by total samples
+===== epoch 37======
+
+Training Error rate % 17.01461
+
+batchsize is not dividable by total samples
+Test Error rate % 30.65935
+
+batchsize is not dividable by total samples
+===== epoch 38======
+
+Training Error rate % 17.13131
+
+batchsize is not dividable by total samples
+Test Error rate % 30.19393
+
+batchsize is not dividable by total samples
+===== epoch 39======
+
+Training Error rate % 17.07220
+
+batchsize is not dividable by total samples
+Test Error rate % 29.91467
+
+batchsize is not dividable by total samples
+===== epoch 40======
+
+Training Error rate % 16.90723
+
+batchsize is not dividable by total samples
+Test Error rate % 30.05319
+
+batchsize is not dividable by total samples
+===== epoch 41======
+
+Training Error rate % 17.01124
+
+batchsize is not dividable by total samples
+Test Error rate % 30.20390
+
+batchsize is not dividable by total samples
+===== epoch 42======
+
+Training Error rate % 17.04998
+
+batchsize is not dividable by total samples
+Test Error rate % 30.26042
+
+batchsize is not dividable by total samples
+===== epoch 43======
+
+Training Error rate % 17.03044
+
+batchsize is not dividable by total samples
+Test Error rate % 30.15071
+
+batchsize is not dividable by total samples
+===== epoch 44======
+
+Training Error rate % 17.02473
+
+batchsize is not dividable by total samples
+Test Error rate % 31.02948
+
+batchsize is not dividable by total samples
+===== epoch 45======
+
+Training Error rate % 16.99006
+
+batchsize is not dividable by total samples
+Test Error rate % 30.70811
+
+batchsize is not dividable by total samples
+===== epoch 46======
+
+Training Error rate % 16.79635
+
+batchsize is not dividable by total samples
+Test Error rate % 30.19393
+
+batchsize is not dividable by total samples
+===== epoch 47======
+
+Training Error rate % 16.90560
+
+batchsize is not dividable by total samples
+Test Error rate % 30.49313
+
+batchsize is not dividable by total samples
+===== epoch 48======
+
+Training Error rate % 16.95865
+
+batchsize is not dividable by total samples
+Test Error rate % 30.52637
+
+batchsize is not dividable by total samples
+===== epoch 49======
+
+Training Error rate % 16.96272
+
+batchsize is not dividable by total samples
+Test Error rate % 31.59574
+
+Adversaries are 	cifar10_10_AdvTest_10000_espi_0.05_cuda_conv_FastSign.pkl
+(10000, 3, 32, 32)
+number of adversaries10000
+(8152, 1, 3, 32, 32)
+(8147, 3, 32, 32)
+(10000, 3, 32, 32)
+(8152, 3, 32, 32)
+(8152, 3, 32, 32)
+====== Clean samples 10000
+
+Accuracy rate (%)  39.6900%
+ avg correctly confidence 88.4012
+ avg incorrectly confidence 87.6483
+====== Out-dis samples 20000
+
+Accuracy rate (%)  82.7100%
+ avg correctly confidence 91.5380
+ avg incorrectly confidence 73.0393
+====== FGS samples 10000
+
+10000
+Not classified as adversary but correctly classified with accuracy 5.4000
+Accuracy rate (%)  62.5500%
+ avg correctly confidence 86.7538
+ avg incorrectly confidence 80.9460
+====== LBFGS samples 8152
+
+batchsize is not dividable by total samples
+8152
+Not classified as adversary but correctly classified with accuracy 57.2866
+Accuracy rate (%)  40.7383%
+ avg correctly confidence 83.6008
+ avg incorrectly confidence 84.1894
+====== DF samples 8147
+
+batchsize is not dividable by total samples
+8147
+Not classified as adversary but correctly classified with accuracy 23.5301
+Accuracy rate (%)  56.6596%
+ avg correctly confidence 85.2093
+ avg incorrectly confidence 80.6027
+====== step1.1 samples 10000
+
+20000
+Not classified as adversary but correctly classified with accuracy 0.9100
+Accuracy rate (%)  81.9300%
+ avg correctly confidence 87.8943
+ avg incorrectly confidence 73.4413
+====== Test FS 8152
+
+batchsize is not dividable by total samples
+8152
+Not classified as adversary but correctly classified with accuracy 4.9558
+Accuracy rate (%)  63.0976%
+ avg correctly confidence 87.2186
+ avg incorrectly confidence 80.9578
+====== Test Un sup 8152
+
+batchsize is not dividable by total samples
+16304
+Not classified as adversary but correctly classified with accuracy 0.8955
+Accuracy rate (%)  81.7674%
+ avg correctly confidence 88.0200
+ avg incorrectly confidence 73.6069
