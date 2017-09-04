@@ -10,7 +10,7 @@ Experiment 2
 - INDIST : CIFAR 10 [30,000]
 - OUTDIST : CIFAR 100 [20,000] + CIFAR10 with SP noise 0.1 [1000]
 
-# Experiment 3
+Experiment 3
 - INDIST : CIFAR 10 [30,000]
 - OUTDIST : CIFAR 100 [20,000] + CIFAR100 with SP noise 0.1 [500]
 
